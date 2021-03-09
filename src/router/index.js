@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import Login from "@/views/Login";
 import Dashboard from "@/views/Dashboard";
 import SignUp from "@/views/SignUp";
+import Reset from "@/views/Reset";
+import CreatePassword from "@/views/CreatePassword";
 
 Vue.use(VueRouter)
 
@@ -32,6 +34,24 @@ const routes = [
     meta: {
       auth: false,
       layout: 'MainLayout'
+    }
+  },
+  {
+    path: '/reset',
+    name: 'Reset',
+    component: Reset,
+    meta: {
+      auth: false,
+      layout: 'AuthLayout'
+    }
+  },
+  {
+    path: '/createPassword',
+    name: 'CreatePassword',
+    component: CreatePassword,
+    meta: {
+      auth: false,
+      layout: 'AuthLayout'
     }
   },
 ]

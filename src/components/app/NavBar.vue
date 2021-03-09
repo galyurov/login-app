@@ -7,9 +7,9 @@
       <span class="navbar-link_text">
         New user?
       </span>
-      <a class="navbar-link_link" href="/signup">
+      <router-link class="navbar-link_link" to="/signup">
         <span>Sign Up</span>
-      </a>
+      </router-link>
     </div>
   </div>
 </template>
