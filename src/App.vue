@@ -1,32 +1,27 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <component :is="layout">
+  </component>
 </template>
+<script>
+import AuthLayout from "@/layouts/AuthLayout";
+import MainLayout from "@/layouts/MainLayout";
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+export default {
+  components: {
+    MainLayout,
+    AuthLayout
+  },
+  computed: {
+    layout() {
+      return this.$route.meta.layout || 'AuthLayout'
     }
   }
+}
+</script>
+<style lang="scss">
+body{
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 </style>
