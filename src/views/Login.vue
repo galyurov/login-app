@@ -24,7 +24,7 @@
             v-model.trim="password"
             @focus="clearError"
             class="login-input"
-            :class="{invalid: ($v.password.$dirty && !$v.password.required) ||  ($v.password.$dirty && !$v.password.minLength)}"
+            :class="{invalid: ($v.password.$dirty && !$v.password.required) ||  ($v.password.$dirty && !$v.password.minLength)|| (this.$store.getters.error)}"
             placeholder="Password"
             type="password"
         >
